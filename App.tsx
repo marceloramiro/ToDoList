@@ -1,12 +1,12 @@
 import React from 'react';
-import {View} from 'react-native';
-import {Home} from './src/Home/Home';
+import {NavigationContainer} from '@react-navigation/native';
+import {RootTabs} from './src/navigation/RootTabs';
 
 function App(): React.JSX.Element {
   return (
-    <View>
-      <Home />
-    </View>
+    <NavigationContainer>
+      <RootTabs />
+    </NavigationContainer>
   );
 }
 
