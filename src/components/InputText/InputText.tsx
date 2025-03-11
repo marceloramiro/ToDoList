@@ -1,6 +1,6 @@
 import {TextInputProps} from 'react-native';
 import Theme from '../../theme';
-import {Input, Label, Container} from './styles';
+import {Input, Label, Container, ErrorLabel} from './styles';
 
 interface InputTextProps extends TextInputProps {
   label?: string;
@@ -8,6 +8,7 @@ interface InputTextProps extends TextInputProps {
   value?: string;
   onChangeText: (text: string) => void;
   height?: number;
+  error?: string;
 }
 
 export const InputText = ({
@@ -16,6 +17,7 @@ export const InputText = ({
   value,
   onChangeText,
   height,
+  error,
   ...rest
 }: InputTextProps) => {
   return (
@@ -29,6 +31,7 @@ export const InputText = ({
         height={height}
         {...rest}
       />
+      <ErrorLabel>{error}</ErrorLabel>
     </Container>
   );
 };

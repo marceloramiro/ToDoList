@@ -4,6 +4,7 @@ import {RootTabs} from './src/navigation/RootTabs';
 import {Theme} from './src/theme';
 import {TodoProvider} from './src/contexts/TodoContext';
 import {ThemeProvider} from 'styled-components';
+import Toast from 'react-native-toast-message';
 
 function App(): React.JSX.Element {
   return (
@@ -11,6 +12,7 @@ function App(): React.JSX.Element {
       <TodoProvider>
         <NavigationContainer>
           <RootTabs />
+          <Toast />
         </NavigationContainer>
       </TodoProvider>
     </ThemeProvider>

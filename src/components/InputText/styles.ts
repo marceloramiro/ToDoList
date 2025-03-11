@@ -23,3 +23,9 @@ export const Input = styled.TextInput<InputTextProps>`
   padding: 10px;
   border-radius: 5px;
 `;
+
+export const ErrorLabel = styled.Text`
+  font-size: 12px;
+  color: ${Theme.colors.red_10};
+  margin-bottom: 10px;
+`;

@@ -1,6 +1,10 @@
 import styled from 'styled-components/native';
 import Theme from '../../theme';
 
+interface ButtonProps {
+  disabled?: boolean;
+}
+
 export const Container = styled.View`
   height: 100%;
   padding: 20px;
@@ -15,8 +19,9 @@ export const Title = styled.Text`
   margin-bottom: 20px;
 `;
 
-export const Button = styled.TouchableOpacity`
+export const Button = styled.TouchableOpacity<ButtonProps>`
   background-color: ${Theme.colors.blue_10};
+  opacity: ${({disabled}: ButtonProps) => (disabled ? 0.5 : 1)};
   padding: 10px 20px;
   border-radius: 5px;
   align-items: center;
