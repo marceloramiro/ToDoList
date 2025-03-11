@@ -3,3 +3,4 @@ export {Checkbox} from './Checkbox/Checkbox';
 export {FloatingButton} from './FloatingButton/FloatingButton';
 export {InputText} from './InputText/InputText';
 export {Card} from './Card/Card';
+export {StatusBadge} from './StatusBadge/StatusBadge';

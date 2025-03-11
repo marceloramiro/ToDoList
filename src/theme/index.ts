@@ -14,6 +14,7 @@ export const Theme = {
     green_10: '#00b894',
     blue_10: '#0984e3',
     red_10: '#d63031',
+    orange_10: '#f39c12',
   },
 };
 

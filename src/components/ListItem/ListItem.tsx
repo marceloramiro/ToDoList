@@ -7,7 +7,7 @@ import {
   Title,
   Container,
 } from './styles';
-import {Checkbox, Card} from '../';
+import {Checkbox, Card, StatusBadge} from '../';
 import {useTodoContext} from '../../contexts/TodoContext';
 
 interface ListItemProps {
@@ -31,6 +31,7 @@ export const ListItem = ({
 
   return (
     <Card>
+      <StatusBadge status={isCompleted ? 'concluído' : 'pendente'} />
       <Container>
         <CheckWrapper>
           <Checkbox onCheck={handleCheck} isChecked={isCompleted} />
