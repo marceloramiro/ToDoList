@@ -1,12 +1,7 @@
-import {StyleSheet} from 'react-native';
 import styled from 'styled-components/native';
 import Theme from '../../theme';
 
 export const Container = styled.View`
-  padding: 15px;
-  border-radius: 10px;
-  margin: 5px;
-  background-color: #fff;
   flex-direction: row;
   gap: 10px;
 `;
@@ -36,11 +31,3 @@ export const Divider = styled.View`
   width: 100%;
   margin: 10px 0;
 `;
-
-const styles = StyleSheet.create({
-  containerShadow: {
-    boxShadow: '2px 2px 6px rgba(0, 0, 0, 0.1)',
-  },
-});
-
-export default styles;

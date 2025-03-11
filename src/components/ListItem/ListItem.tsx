@@ -1,30 +1,46 @@
 import React from 'react';
-import styles, {
+import {
   CheckWrapper,
-  Container,
   ContentWrapper,
   Description,
   Divider,
   Title,
+  Container,
 } from './styles';
-import {Checkbox} from '../';
+import {Checkbox, Card} from '../';
+import {useTodoContext} from '../../contexts/TodoContext';
 
 interface ListItemProps {
+  id: string;
   title: string;
   description: string;
+  isCompleted?: boolean;
 }
 
-export const ListItem = ({title, description}: ListItemProps) => {
+export const ListItem = ({
+  id,
+  title,
+  description,
+  isCompleted,
+}: ListItemProps) => {
+  const {setTodoIsCompleted} = useTodoContext();
+
+  const handleCheck = (isChecked: boolean) => {
+    setTodoIsCompleted(id, isChecked);
+  };
+
   return (
-    <Container style={styles.containerShadow}>
-      <CheckWrapper>
-        <Checkbox onCheck={isChecked => console.log(isChecked)} />
-      </CheckWrapper>
-      <ContentWrapper>
-        <Title>{title}</Title>
-        <Divider />
-        <Description>{description}</Description>
-      </ContentWrapper>
-    </Container>
+    <Card>
+      <Container>
+        <CheckWrapper>
+          <Checkbox onCheck={handleCheck} isChecked={isCompleted} />
+        </CheckWrapper>
+        <ContentWrapper>
+          <Title>{title}</Title>
+          <Divider />
+          <Description>{description}</Description>
+        </ContentWrapper>
+      </Container>
+    </Card>
   );
 };
