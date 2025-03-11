@@ -45,7 +45,7 @@ export const RootTabs = () => {
 
   return (
     <Tab.Navigator
-      initialRouteName="CreateToDoScreen"
+      initialRouteName="TodosListScreen"
       screenOptions={({route}) => ({
         tabBarIcon: ({color, size}) =>
           getBarIcon({
@@ -62,9 +62,7 @@ export const RootTabs = () => {
       <Tab.Screen
         name="TodosListScreen"
         component={TodosListScreen}
-        options={{
-          ...defaultOptions,
-        }}
+        options={defaultOptions}
       />
     </Tab.Navigator>
   );

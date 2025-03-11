@@ -1,3 +1,4 @@
+import {useMemo} from 'react';
 import {FlatList} from 'react-native';
 import Toast from 'react-native-toast-message';
 import Icon from '@react-native-vector-icons/ionicons';
@@ -10,6 +11,10 @@ import styles, {Button, Container, EmptyContainer, InfoText} from './styles';
 export const TodosListScreen = () => {
   const {todos, removeCompletedTodos} = useTodoContext();
   const navigation = useNavigation<NavigationProps>();
+  const hasConcludedTodos = useMemo(
+    () => todos?.some(todo => todo?.isCompleted),
+    [todos],
+  );
 
   const handleNavigateToCreateToDoScreen = () => {
     navigation.navigate('CreateToDoScreen');
@@ -48,7 +53,10 @@ export const TodosListScreen = () => {
           />
         )}
       />
-      <FloatingButton onPress={handleRemoveCompletedTodos} color="red_10">
+      <FloatingButton
+        show={hasConcludedTodos}
+        onPress={handleRemoveCompletedTodos}
+        color="red_10">
         <Icon name="trash" size={25} color="white" />
       </FloatingButton>
     </Container>
