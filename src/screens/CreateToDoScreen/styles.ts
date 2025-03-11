@@ -1,3 +1,4 @@
+import {StyleSheet} from 'react-native';
 import styled from 'styled-components/native';
 import Theme from '@/theme';
 
@@ -37,3 +38,11 @@ export const TextButton = styled.Text`
 export const ContentWrapper = styled.View`
   gap: 10px;
 `;
+
+const styles = StyleSheet.create({
+  contentContainerStyle: {
+    flexGrow: 1,
+  },
+});
+
+export default styles;

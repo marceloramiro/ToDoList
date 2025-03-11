@@ -5,7 +5,13 @@ import {useForm, Controller} from 'react-hook-form';
 import {yupResolver} from '@hookform/resolvers/yup';
 import {useTodoContext} from '@/contexts/TodoContext';
 import {Card, InputText} from '@/components';
-import {Button, Container, ContentWrapper, TextButton, Title} from './styles';
+import styles, {
+  Button,
+  Container,
+  ContentWrapper,
+  TextButton,
+  Title,
+} from './styles';
 
 interface FormData {
   id?: number;
@@ -54,7 +60,7 @@ export const CreateToDoScreen = () => {
   };
 
   return (
-    <ScrollView contentContainerStyle={{flexGrow: 1}}>
+    <ScrollView contentContainerStyle={styles.contentContainerStyle}>
       <Container>
         <Card>
           <ContentWrapper>

@@ -1,3 +1,4 @@
+import {StyleSheet} from 'react-native';
 import styled from 'styled-components/native';
 import Theme from '@/theme';
 
@@ -28,3 +29,13 @@ export const InfoText = styled.Text`
   color: ${Theme.colors.gray_20};
   margin-top: 20px;
 `;
+
+const styles = StyleSheet.create({
+  contentContainerStyle: {
+    flexGrow: 1,
+    paddingBottom: 100,
+    paddingTop: 20,
+  },
+});
+
+export default styles;

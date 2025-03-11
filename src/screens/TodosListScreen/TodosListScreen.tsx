@@ -5,7 +5,7 @@ import {useNavigation} from '@react-navigation/native';
 import {useTodoContext} from '@/contexts/TodoContext';
 import {NavigationProps} from '@/navigation/RootTabs';
 import {ListItem, FloatingButton} from '@/components';
-import {Button, Container, EmptyContainer, InfoText} from './styles';
+import styles, {Button, Container, EmptyContainer, InfoText} from './styles';
 
 export const TodosListScreen = () => {
   const {todos, removeCompletedTodos} = useTodoContext();
@@ -30,11 +30,7 @@ export const TodosListScreen = () => {
       <FlatList
         data={todos}
         keyExtractor={item => item.id}
-        contentContainerStyle={{
-          flexGrow: 1,
-          paddingBottom: 100,
-          paddingTop: 20,
-        }}
+        contentContainerStyle={styles.contentContainerStyle}
         ListEmptyComponent={
           <EmptyContainer>
             <Button onPress={handleNavigateToCreateToDoScreen}>
