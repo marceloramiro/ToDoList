@@ -15,7 +15,7 @@ export const FloatingButton = ({
   color,
   show = false,
 }: FloatingButtonProps) => {
-  const translateAnim = useMemo(() => new Animated.Value(0), []);
+  const translateAnim = useMemo(() => new Animated.Value(100), []);
 
   useEffect(() => {
     Animated.timing(translateAnim, {
