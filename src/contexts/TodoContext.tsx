@@ -1,4 +1,11 @@
-import {createContext, useContext, useState} from 'react';
+import {
+  createContext,
+  useCallback,
+  useContext,
+  useEffect,
+  useState,
+} from 'react';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
 type TodoType = {
   id: string;
@@ -24,7 +31,7 @@ const TodoProvider = ({children}: TodoProviderProps) => {
   const [todos, setTodos] = useState<TodoType[]>([]);
 
   const addTodo = (todo: TodoType) => {
-    setTodos([...todos, todo]);
+    setTodos(prevTodos => [...prevTodos, todo]);
   };
 
   const setTodoIsCompleted = (id: string, isCompleted: boolean) => {
@@ -38,6 +45,33 @@ const TodoProvider = ({children}: TodoProviderProps) => {
   const removeCompletedTodos = () => {
     setTodos(prevTodos => prevTodos.filter(todo => !todo.isCompleted));
   };
+
+  const addTodoToStorage = useCallback(async () => {
+    try {
+      await AsyncStorage.setItem('todos', JSON.stringify(todos));
+    } catch (error) {
+      console.error(error);
+    }
+  }, [todos]);
+
+  const getTodosFromStorage = async () => {
+    try {
+      const storedTodo = await AsyncStorage.getItem('todos');
+      if (storedTodo) {
+        setTodos(JSON.parse(storedTodo));
+      }
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
+  useEffect(() => {
+    getTodosFromStorage();
+  }, []);
+
+  useEffect(() => {
+    addTodoToStorage();
+  }, [todos, addTodoToStorage]);
 
   return (
     <TodoContext.Provider
