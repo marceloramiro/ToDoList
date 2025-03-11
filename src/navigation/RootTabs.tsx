@@ -4,7 +4,8 @@ import {
   TransitionPresets,
 } from '@react-navigation/bottom-tabs';
 import Icon from '@react-native-vector-icons/ionicons';
-import {CreateToDoScreen, TodosListScreen} from '../screens';
+import {CreateToDoScreen, TodosListScreen} from '../screens/';
+import Theme from '../theme';
 
 type RootTabsParamList = {
   TodosListScreen: undefined;
@@ -24,6 +25,10 @@ const defaultOptions: BottomTabNavigationOptions = {
   headerShown: false,
   tabBarShowLabel: false,
   tabBarLabelPosition: 'beside-icon',
+  tabBarStyle: {
+    backgroundColor: Theme.colors.tab,
+    borderTopWidth: 0,
+  },
 };
 
 export const RootTabs = () => {
@@ -37,7 +42,7 @@ export const RootTabs = () => {
 
   return (
     <Tab.Navigator
-      initialRouteName="TodosListScreen"
+      initialRouteName="CreateToDoScreen"
       screenOptions={({route}) => ({
         tabBarIcon: ({color, size}) =>
           getBarIcon({
@@ -47,16 +52,16 @@ export const RootTabs = () => {
           }),
       })}>
       <Tab.Screen
+        name="CreateToDoScreen"
+        component={CreateToDoScreen}
+        options={defaultOptions}
+      />
+      <Tab.Screen
         name="TodosListScreen"
         component={TodosListScreen}
         options={{
           ...defaultOptions,
         }}
-      />
-      <Tab.Screen
-        name="CreateToDoScreen"
-        component={CreateToDoScreen}
-        options={defaultOptions}
       />
     </Tab.Navigator>
   );
