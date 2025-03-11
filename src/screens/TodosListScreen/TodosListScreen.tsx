@@ -1,13 +1,29 @@
-import {ListItem} from '../../components';
+import {FlatList} from 'react-native';
+import Icon from '@react-native-vector-icons/ionicons';
+import {ListItem, FloatingButton} from '../../components';
+import {useTodoContext} from '../../contexts/TodoContext';
 import {Container} from './styles';
 
 export const TodosListScreen = () => {
+  const {todos, removeCompletedTodos} = useTodoContext();
+
   return (
     <Container>
-      <ListItem title="Title 1" description="Description 1" />
-      <ListItem title="Title 2" description="Description 2" />
-      <ListItem title="Title 3" description="Description 3" />
-      <ListItem title="Title 4" description="Description 4" />
+      <FlatList
+        data={todos}
+        keyExtractor={item => item.id}
+        renderItem={({item}) => (
+          <ListItem
+            id={item.id}
+            title={item.title}
+            description={item.description}
+            isCompleted={item.isCompleted}
+          />
+        )}
+      />
+      <FloatingButton onPress={removeCompletedTodos} color="red_10">
+        <Icon name="trash" size={25} color="white" />
+      </FloatingButton>
     </Container>
   );
 };
