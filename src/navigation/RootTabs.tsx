@@ -1,5 +1,6 @@
 import {
   BottomTabNavigationOptions,
+  BottomTabNavigationProp,
   createBottomTabNavigator,
   TransitionPresets,
 } from '@react-navigation/bottom-tabs';
@@ -11,6 +12,8 @@ type RootTabsParamList = {
   TodosListScreen: undefined;
   CreateToDoScreen: undefined;
 };
+
+export type NavigationProps = BottomTabNavigationProp<RootTabsParamList>;
 
 interface GetBarIconProps {
   routeName: keyof RootTabsParamList;
