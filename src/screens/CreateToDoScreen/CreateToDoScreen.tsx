@@ -47,6 +47,7 @@ export const CreateToDoScreen = () => {
       type: 'success',
       text1: 'Sucesso!',
       text2: 'Tarefa criada com sucesso!',
+      visibilityTime: 1500,
     });
 
     reset(DEFAULT_VALUES);

@@ -5,6 +5,7 @@ import {useTodoContext} from '../../contexts/TodoContext';
 import {ListItem, FloatingButton} from '../../components';
 import {NavigationProps} from '../../navigation/RootTabs';
 import {Button, Container, EmptyContainer, InfoText} from './styles';
+import Toast from 'react-native-toast-message';
 
 export const TodosListScreen = () => {
   const {todos, removeCompletedTodos} = useTodoContext();
@@ -12,6 +13,16 @@ export const TodosListScreen = () => {
 
   const handleNavigateToCreateToDoScreen = () => {
     navigation.navigate('CreateToDoScreen');
+  };
+
+  const handleRemoveCompletedTodos = () => {
+    removeCompletedTodos();
+    Toast.show({
+      type: 'error',
+      text1: 'Sucesso',
+      text2: 'Removido todas as tarefas completadas',
+      visibilityTime: 1000,
+    });
   };
 
   return (
@@ -41,7 +52,7 @@ export const TodosListScreen = () => {
           />
         )}
       />
-      <FloatingButton onPress={removeCompletedTodos} color="red_10">
+      <FloatingButton onPress={handleRemoveCompletedTodos} color="red_10">
         <Icon name="trash" size={25} color="white" />
       </FloatingButton>
     </Container>
