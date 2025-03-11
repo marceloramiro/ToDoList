@@ -18,10 +18,10 @@ export const TodosListScreen = () => {
   const handleRemoveCompletedTodos = () => {
     removeCompletedTodos();
     Toast.show({
-      type: 'error',
-      text1: 'Sucesso',
+      type: 'success',
+      text1: 'Sucesso!',
       text2: 'Removido todas as tarefas completadas',
-      visibilityTime: 1000,
+      visibilityTime: 1500,
     });
   };
 
