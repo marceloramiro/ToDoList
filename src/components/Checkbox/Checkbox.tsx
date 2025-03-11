@@ -12,6 +12,7 @@ export const Checkbox = ({onCheck, isChecked}: CheckboxProps) => {
       onPress={onCheck}
       fillColor={Theme.colors.blue_10}
       isChecked={isChecked}
+      hitSlop={{top: 30, bottom: 30, left: 30, right: 30}}
     />
   );
 };
