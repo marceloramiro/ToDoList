@@ -1,10 +1,10 @@
 import {ScrollView} from 'react-native';
-import {useForm, Controller} from 'react-hook-form';
 import Toast from 'react-native-toast-message';
 import * as yup from 'yup';
+import {useForm, Controller} from 'react-hook-form';
 import {yupResolver} from '@hookform/resolvers/yup';
-import {Card, InputText} from '../../components';
-import {useTodoContext} from '../../contexts/TodoContext';
+import {useTodoContext} from '@/contexts/TodoContext';
+import {Card, InputText} from '@/components';
 import {Button, Container, ContentWrapper, TextButton, Title} from './styles';
 
 interface FormData {

@@ -1,14 +1,14 @@
 import styled from 'styled-components/native';
-import Theme from '../../theme';
+import Theme from '@/theme';
 
-interface StatusBadgeProps {
+interface ContainerProps {
   status: 'concluído' | 'pendente';
 }
 
-export const Container = styled.View<StatusBadgeProps>`
+export const Container = styled.View<ContainerProps>`
   padding: 2px 5px;
   border-radius: 15px;
-  background-color: ${({status}: StatusBadgeProps) =>
+  background-color: ${({status}: ContainerProps) =>
     status === 'concluído' ? Theme.colors.green_10 : Theme.colors.orange_10};
   align-items: center;
   justify-content: center;

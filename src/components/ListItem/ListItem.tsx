@@ -1,4 +1,6 @@
 import React from 'react';
+import {useTodoContext} from '@/contexts/TodoContext';
+import {Checkbox, Card, StatusBadge} from '@/components';
 import {
   CheckWrapper,
   ContentWrapper,
@@ -7,8 +9,6 @@ import {
   Title,
   Container,
 } from './styles';
-import {Checkbox, Card, StatusBadge} from '../';
-import {useTodoContext} from '../../contexts/TodoContext';
 
 interface ListItemProps {
   id: string;

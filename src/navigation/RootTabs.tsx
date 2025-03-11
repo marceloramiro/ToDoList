@@ -5,8 +5,8 @@ import {
   TransitionPresets,
 } from '@react-navigation/bottom-tabs';
 import Icon from '@react-native-vector-icons/ionicons';
-import {CreateToDoScreen, TodosListScreen} from '../screens/';
-import Theme from '../theme';
+import {CreateToDoScreen, TodosListScreen} from '@/screens';
+import Theme from '@/theme';
 
 type RootTabsParamList = {
   TodosListScreen: undefined;

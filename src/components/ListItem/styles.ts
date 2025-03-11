@@ -1,5 +1,5 @@
 import styled from 'styled-components/native';
-import Theme from '../../theme';
+import Theme from '@/theme';
 
 export const Container = styled.View`
   flex-direction: row;

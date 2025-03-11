@@ -1,11 +1,11 @@
 import {FlatList} from 'react-native';
+import Toast from 'react-native-toast-message';
 import Icon from '@react-native-vector-icons/ionicons';
 import {useNavigation} from '@react-navigation/native';
-import {useTodoContext} from '../../contexts/TodoContext';
-import {ListItem, FloatingButton} from '../../components';
-import {NavigationProps} from '../../navigation/RootTabs';
+import {useTodoContext} from '@/contexts/TodoContext';
+import {NavigationProps} from '@/navigation/RootTabs';
+import {ListItem, FloatingButton} from '@/components';
 import {Button, Container, EmptyContainer, InfoText} from './styles';
-import Toast from 'react-native-toast-message';
 
 export const TodosListScreen = () => {
   const {todos, removeCompletedTodos} = useTodoContext();

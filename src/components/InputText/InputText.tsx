@@ -1,5 +1,5 @@
 import {TextInputProps} from 'react-native';
-import Theme from '../../theme';
+import Theme from '@/theme';
 import {Input, Label, Container, ErrorLabel} from './styles';
 
 interface InputTextProps extends TextInputProps {
