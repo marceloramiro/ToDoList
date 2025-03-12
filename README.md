@@ -4,25 +4,27 @@ Antes de instalar o projeto, verifique se todas as dependências para rodar o Re
 
 Link da documentação oficial: https://reactnative.dev/docs/set-up-your-environment?os=macos
 
-**Instalação dos pacotes**
+
+### Instalação dos pacotes
 
 basta rodar o comando `yarn` ou `npm i` no console dentro da pasta principal do projeto
 
-**Iniciar o projeto**
+
+### Iniciar o projeto
 
 Android:
 
-Yarn: `yarn android`
+- Yarn: `yarn android`
 
-Npm: `npm run dev`
+- Npm: `npm run dev`
 
 IOs:
 
-Yarn: `yarn ios`
+- Yarn: `yarn ios`
 
-Npm: `npm run ios`
+- Npm: `npm run ios`
 
-**Principais bibliotecas utilizadas:**
+### Principais bibliotecas utilizadas:
 
 | [@react-navigation](https://reactnavigation.org/)                                                                                           | Biblioteca robusta e amplamente utilizada para navegação no React Native. Foi utilizada a variante “bottom-tabs” para um design mais limpo.                                                                       |
 | ------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
