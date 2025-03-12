@@ -1,97 +1,32 @@
-This is a new [**React Native**](https://reactnative.dev) project, bootstrapped using [`@react-native-community/cli`](https://github.com/react-native-community/cli).
+# Instalação
 
-# Getting Started
+Antes de instalar o projeto, verifique se todas as dependências para rodar o React Native estão instaladas:
 
-> **Note**: Make sure you have completed the [Set Up Your Environment](https://reactnative.dev/docs/set-up-your-environment) guide before proceeding.
+Link da documentação oficial: https://reactnative.dev/docs/set-up-your-environment?os=macos
 
-## Step 1: Start Metro
+**Instalação dos pacotes**
 
-First, you will need to run **Metro**, the JavaScript build tool for React Native.
+basta rodar o comando `yarn` ou `npm i` no console dentro da pasta principal do projeto
 
-To start the Metro dev server, run the following command from the root of your React Native project:
+**Iniciar o projeto**
 
-```sh
-# Using npm
-npm start
+Android:
 
-# OR using Yarn
-yarn start
-```
+Yarn: `yarn android`
 
-## Step 2: Build and run your app
+Npm: `npm run dev`
 
-With Metro running, open a new terminal window/pane from the root of your React Native project, and use one of the following commands to build and run your Android or iOS app:
+IOs:
 
-### Android
+Yarn: `yarn ios`
 
-```sh
-# Using npm
-npm run android
+Npm: `npm run ios`
 
-# OR using Yarn
-yarn android
-```
+**Principais bibliotecas utilizadas:**
 
-### iOS
-
-For iOS, remember to install CocoaPods dependencies (this only needs to be run on first clone or after updating native deps).
-
-The first time you create a new project, run the Ruby bundler to install CocoaPods itself:
-
-```sh
-bundle install
-```
-
-Then, and every time you update your native dependencies, run:
-
-```sh
-bundle exec pod install
-```
-
-For more information, please visit [CocoaPods Getting Started guide](https://guides.cocoapods.org/using/getting-started.html).
-
-```sh
-# Using npm
-npm run ios
-
-# OR using Yarn
-yarn ios
-```
-
-If everything is set up correctly, you should see your new app running in the Android Emulator, iOS Simulator, or your connected device.
-
-This is one way to run your app — you can also build it directly from Android Studio or Xcode.
-
-## Step 3: Modify your app
-
-Now that you have successfully run the app, let's make changes!
-
-Open `App.tsx` in your text editor of choice and make some changes. When you save, your app will automatically update and reflect these changes — this is powered by [Fast Refresh](https://reactnative.dev/docs/fast-refresh).
-
-When you want to forcefully reload, for example to reset the state of your app, you can perform a full reload:
-
-- **Android**: Press the <kbd>R</kbd> key twice or select **"Reload"** from the **Dev Menu**, accessed via <kbd>Ctrl</kbd> + <kbd>M</kbd> (Windows/Linux) or <kbd>Cmd ⌘</kbd> + <kbd>M</kbd> (macOS).
-- **iOS**: Press <kbd>R</kbd> in iOS Simulator.
-
-## Congratulations! :tada:
-
-You've successfully run and modified your React Native App. :partying_face:
-
-### Now what?
-
-- If you want to add this new React Native code to an existing application, check out the [Integration guide](https://reactnative.dev/docs/integration-with-existing-apps).
-- If you're curious to learn more about React Native, check out the [docs](https://reactnative.dev/docs/getting-started).
-
-# Troubleshooting
-
-If you're having issues getting the above steps to work, see the [Troubleshooting](https://reactnative.dev/docs/troubleshooting) page.
-
-# Learn More
-
-To learn more about React Native, take a look at the following resources:
-
-- [React Native Website](https://reactnative.dev) - learn more about React Native.
-- [Getting Started](https://reactnative.dev/docs/environment-setup) - an **overview** of React Native and how setup your environment.
-- [Learn the Basics](https://reactnative.dev/docs/getting-started) - a **guided tour** of the React Native **basics**.
-- [Blog](https://reactnative.dev/blog) - read the latest official React Native **Blog** posts.
-- [`@facebook/react-native`](https://github.com/facebook/react-native) - the Open Source; GitHub **repository** for React Native.
+| [@react-navigation](https://reactnavigation.org/)                                                                                           | Biblioteca robusta e amplamente utilizada para navegação no React Native. Foi utilizada a variante “bottom-tabs” para um design mais limpo.                                                                       |
+| ------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [react-hook-form](https://www.react-hook-form.com/)                                                                                         | Biblioteca para formulários Web / Mobile altamente performática e simples de implementar, escolhida principalmente para evitar renderizações desnecessárias e validar se os dados foram preenchidos corretamente. |
+| [yup](https://github.com/jquense/yup)                                                                                                       | Ferramenta utilizada para validação de formularios.                                                                                                                                                               |
+| [styled-components](https://styled-components.com/)                                                                                         | Utilizado para criar o tema do app escolhido pela facilidade de utilização e leitura do código.                                                                                                                   |
+| [@react-native-async-storage/async-storage](https://github.com/react-native-async-storage/async-storage/tree/main/packages/default-storage) | ferramenta utilizada para salvar localmente as tarefas adicionadas.                                                                                                                                               |
